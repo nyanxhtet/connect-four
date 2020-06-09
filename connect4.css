@@ -17,7 +17,7 @@ h1 {
 }
 
 h2{
-  text-shadow: 2px 2px black;
+  text-shadow: 2px px black;
   font-size: 35px;
 }
 
@@ -81,12 +81,12 @@ input{
 
 /* Modal Content */
 .modal-content {
-  background-color: rgba(56, 70, 92, 0.8);
+  background-color: rgba(56, 70, 92, 0.5);
   ;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 60%;
   text-align: center;
 }
