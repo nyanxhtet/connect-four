@@ -91,6 +91,11 @@ class Game {
     const spot = document.getElementById(`${y}-${x}`);
     spot.append(piece);
   }
+// //variable 
+// processing true return 
+// once processing is false  then you can handleClick()
+// //translate Y
+
 
   changeColor(event) {
     let e = event;
@@ -137,7 +142,7 @@ class Game {
     // check for win
     if (this.checkForWin()) {
       this.gameOver = true;
-      return this.endGame(`The ${this.currPlayer.color} player won!`);
+      return this.endGame(`The player ${this.currPlayer.number} won!`);
     }
 
     // switch players
@@ -182,30 +187,24 @@ class Game {
 }
 
 class Player {
-  constructor(color) {
+  constructor(color,number) {
     this.color = color;
-  }
+    this.number = number;
+      }
 }
 
 document.getElementById('start-game').addEventListener('click', () => {
   //storing user details
   let p1 = document.querySelector('#p1-color');
   let p2 = document.querySelector('#p2-color');
-
-  
-  if (p1.value.length <= 0 || p2.value.length <= 0  )
-  throw alert("Please enter a valid value for both players!");
-
   //initializing new players
-  let player1 = new Player(p1.value);
-  let player2 = new Player(p2.value);
-
-  
-  //clearing modal before starting game
-  let result = document.querySelector('#result');
-  result.innerText = '';
-  p1.value = '';
-  p2.value = '';
+  let player1 = new Player(p1.value, 1);
+  let player2 = new Player(p2.value, 2);
+  // //clearing modal before starting game
+  // let result = document.querySelector('#result');
+  // result.innerText = '';
+  // p1.value = '';
+  // p2.value = '';
 
   //create players
   new Game(player1, player2);
